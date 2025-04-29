@@ -1,0 +1,283 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabular Data Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .result {
+            margin-top: 30px;
+        }
+        .result h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Predict Lung Cancer Using Tabular Data</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label for="smoking">Smoking</label>
+            <select class="form-control" name="smoking">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="yellow_fingers">Yellow Fingers</label>
+            <select class="form-control" name="yellow_fingers">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        
+
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>{{ result }}</h2>
+    </div>
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabular Data Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .result {
+            margin-top: 30px;
+        }
+        .result h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Predict Lung Cancer Using Tabular Data</h1>
+    <form method="POST">
+        <!-- Gender -->
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <!-- Age -->
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" name="age" required>
+        </div>
+
+        <!-- Smoking -->
+        <div class="form-group">
+            <label for="smoking">Smoking</label>
+            <select class="form-control" name="smoking" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Yellow Fingers -->
+        <div class="form-group">
+            <label for="yellow_fingers">Yellow Fingers</label>
+            <select class="form-control" name="yellow_fingers" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Anxiety -->
+        <div class="form-group">
+            <label for="anxiety">Anxiety</label>
+            <select class="form-control" name="anxiety" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Peer Pressure -->
+        <div class="form-group">
+            <label for="peer_pressure">Peer Pressure</label>
+            <select class="form-control" name="peer_pressure" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Chronic Disease -->
+        <div class="form-group">
+            <label for="chronic_disease">Chronic Disease</label>
+            <select class="form-control" name="chronic_disease" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Fatigue -->
+        <div class="form-group">
+            <label for="fatigue">Fatigue</label>
+            <select class="form-control" name="fatigue" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Allergy -->
+        <div class="form-group">
+            <label for="allergy">Allergy</label>
+            <select class="form-control" name="allergy" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Wheezing -->
+        <div class="form-group">
+            <label for="wheezing">Wheezing</label>
+            <select class="form-control" name="wheezing" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Alcohol Consumption -->
+        <div class="form-group">
+            <label for="alcohol">Alcohol Consumption</label>
+            <select class="form-control" name="alcohol" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Coughing -->
+        <div class="form-group">
+            <label for="coughing">Coughing</label>
+            <select class="form-control" name="coughing" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Shortness of Breath -->
+        <div class="form-group">
+            <label for="shortness_of_breath">Shortness of Breath</label>
+            <select class="form-control" name="shortness_of_breath" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Swallowing Difficulty -->
+        <div class="form-group">
+            <label for="swallowing_difficulty">Swallowing Difficulty</label>
+            <select class="form-control" name="swallowing_difficulty" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <!-- Chest Pain -->
+        <div class="form-group">
+            <label for="chest_pain">Chest Pain</label>
+            <select class="form-control" name="chest_pain" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>{{ result }}</h2>
+        <p>Disease Probability: {{ disease_prob }}</p>
+    </div>
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
