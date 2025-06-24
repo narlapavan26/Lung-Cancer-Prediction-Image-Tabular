@@ -1,5 +1,5 @@
 streamlit 
-tensorflow 
+tensorflow==2.10
 numpy 
 pillow 
 opencv-python
@@ -7,3 +7,4 @@ tensorflow
 scikit-learn
 joblib
 flask
+pandas
